@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+h1 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.cards-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    header {
+        padding: 1rem;
+    }
+}
+
+.card.basic {
+    border-top: 4px solid #4299e1;
+    background: linear-gradient(to bottom, #ebf8ff, #fff);
+}
+
+.card.model {
+    border-top: 4px solid #48bb78;
+    background: linear-gradient(to bottom, #f0fff4, #fff);
+}
+
+.card.technical {
+    border-top: 4px solid #9f7aea;
+    background: linear-gradient(to bottom, #f3e8ff, #fff);
+}
+
+.card.hardware {
+    border-top: 4px solid #ed8936;
+    background: linear-gradient(to bottom, #fffaf0, #fff);
+}
+
+.category-title {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+}
+
+.category-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1.5rem;
+    margin-right: 1rem;
+    background-color: currentColor;
+    border-radius: 2px;
+}
+
+.category-title:first-child {
+    margin-top: 0;
+}
+  
